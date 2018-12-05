@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import AppViews from "./AppViews"
 import NavBar from "./nav/NavBar"
+import Login from "./login/Login"
 
 import "./CurdNerd.css"
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -11,7 +12,7 @@ export default class CurdNerd extends Component {
         return (
             <React.Fragment>
               <NavBar />
-              <AppViews />
+              <Login />
             </React.Fragment>
         )
     }
