@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import { Icon, Button } from 'semantic-ui-react'
+import Cheese from "../../images/cheese.png"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./NavBar.css"
 
@@ -11,29 +12,26 @@ export default class NavBar extends Component {
         <ul className="nav nav-pills">
 
           <li className="nav-item">
-            <Link className="nav-link" to="/"><Icon name="user circle" size="large" />User Profiles</Link>
+            <Link className="nav-link" to="/"><Icon name="clipboard" size="large" />Dashboard</Link>
           </li>
 
           <li className="nav-item">
-            <Link className="nav-link" to="/"><Icon name="calendar alternate outline" size="large" />Events</Link>
+            <Link className="nav-link" to="/"><Icon name="wrench" size="large" />Create</Link>
           </li>
 
           <li className="nav-item">
-            <Link className="nav-link" to="/"><Icon name="newspaper outline" size="large" />News</Link>
+            <Link className="nav-link" to="/"><Icon name="book" size="large" />Library</Link>
           </li>
 
           <li className="nav-item">
-            <Link className="nav-link" to="/"><Icon name="comments outline" size="large" />Messages</Link>
-          </li>
-
-          <li className="nav-item">
-            <Link className="nav-link" to="/"><Icon name="bell outline" size="large" />To Do</Link>
+            <Link className="nav-link" to="/"><Icon name="share square" size="large" />Share</Link>
           </li>
 
           
+          
 
         </ul>
-        <p id="navTagline">Welcome to <img id="react-img" src="../../../react.png"></img> Nutshell!</p>
+        {/* <p id="navTagline">Welcome to Curd Nerd! <img src={Cheese} alt="Curd Nerd"></img></p> */}
         <div className="logbtn">
         <Button animated onClick={() => {
           document.location.href = 'http://localhost:3000/login'
