@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import CurdNerd from './components/CurdNerd';
+import React from "react"
 import { BrowserRouter as Router } from "react-router-dom"
-import 'semantic-ui-css/semantic.min.css';
+import ReactDOM from "react-dom"
+import "./index.css"
+import App from "./App"
 
 ReactDOM.render(
   <Router>
-      <CurdNerd />
-  </Router>
-  , document.getElementById('root'))
+    <App />
+  </Router>,
+  document.getElementById("root")
+)
