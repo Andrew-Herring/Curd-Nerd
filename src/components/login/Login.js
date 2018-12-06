@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import Cheese from "../../images/cheese.png"
 import "./Login.css"
 
 export default class Login extends Component {
@@ -19,6 +20,10 @@ export default class Login extends Component {
   // Simplistic handler for login submit
   handleLogin = (e) => {
     e.preventDefault()
+    const newUser = {
+      email: this.state.email,
+      password: this.state.password
+    }
 
     /*
         For now, just store the email and password that
@@ -56,15 +61,17 @@ body > div > div > div.login-form {
 `}</style>
         <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
           <Grid.Column style={{ maxWidth: 450 }}>
-            <Header as='h2' color='orange' textAlign='center'>
+            <Header color='yellow' textAlign='center' size="huge">
               Welcome to Curd Nerd!
-                  </Header>
+            </Header>
+            <Image src={Cheese} size='small' className="cheeseIcon" />
+            <br></br>
             <Form size='large' onSubmit={this.handleLogin}>
               <Segment stacked>
                 <Form.Input onChange={this.handleFieldChange} type="email"
                   id="email"
                   placeholder="Email address"
-                  required="" autoFocus="" fluid icon='mail' iconPosition='left' />
+                  required=' ' autoFocus="" fluid icon='mail' iconPosition='left' />
                 <Form.Input
                   onChange={this.handleFieldChange} type="password"
                   id="password"
@@ -76,13 +83,15 @@ body > div > div > div.login-form {
                   type='password'
                 />
 
-                <Button type="submit" className="btn btn-primary" color='orange' fluid size='large'>
+                <Button type="submit" className="btn btn-primary" color="yellow" fluid size='large'>
                   Login
-                          </Button>
+                </Button>
               </Segment>
             </Form>
             <Message>
-              New to us? <a href='http://localhost:3000/register'>Sign Up</a>
+             Did You Know:
+             <br></br>
+              <p>There is no such thing as orange milk.</p>
             </Message>
           </Grid.Column>
         </Grid>

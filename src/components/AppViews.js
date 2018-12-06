@@ -1,46 +1,36 @@
 import { Route, Redirect } from 'react-router-dom'
 import React, { Component } from 'react';
-import Dash from "./welcome/dash"
+import cheeseBank from '../module/CheeseManager'
 
+class AppViews extends Component {
 
-
-
-
-
-
-
-
-
-export default class AppViews extends Component {
-
-  state = {
-    plates: [],
   
-    isLoaded: false
+
+state = {
+  plates: []
   }
 
 
+  componentDidMount() {
+    const _state = {}
+    cheeseBank.all("animals")
+      .then(animals => (_state.animals = animals))
+      .then(() =>
+        cheeseBank.all("employees").then(
+          employees => (_state.employees = employees)
+        )
+      )
+      .then(() =>
+        cheeseBank.all("locations").then(
+          locations => (_state.locations = locations)
+        )
+      )
+      .then(() =>
+        cheeseBank.all("owners").then(owners => (_state.owners = owners))
+      )
+      .then(() => {
+        this.setState(_state)
+      })
+  }
 
-// componentDidMount() {
-//   const newState = {}
-
-//   DataManager.getAll("plates")
-//     .then(allplates => {
-//       newState.plates = allplates
-//     })
-
-//     .then(() =>
-//       this.setState(newState))
-// }
-
-
-render() {
-  return (
-    <React.Fragment>
-
-     {/* routes */}
-
-    </React.Fragment>
-  )
-}
 }
