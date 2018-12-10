@@ -56,10 +56,7 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
         .then(allMilks => {
           newState.milks = allMilks
         })
-      // cheeseBank.getCheese("cheeses")
-      //   .then(cheeses => {
-      //     this.setState({cheeseNames:cheeses})
-      //   })
+     
         .then(() =>
           this.setState(newState))
     }
