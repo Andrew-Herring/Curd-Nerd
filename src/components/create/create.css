@@ -1,8 +1,12 @@
-.cheeseDrop1 {
+.cheeseDrop {
   margin-left: 100px;
   padding: 10px;
 }
-.cheeseDrop2 {
+.peopleDrop {
+  margin-left: 100px;
+  padding: 10px;
+}
+.createBtn {
   margin-left: 100px;
   padding: 10px;
 }
