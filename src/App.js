@@ -1,15 +1,12 @@
-import { Route, Redirect } from 'react-router-dom'
 import React, { Component } from 'react';
 import IsAuth from "./components/Authentication/IsAuth"
-import DataManager from './module/DataManager'
-import Dash from "./welcome/dash"
+import "./App.css"
 
 
 
 
-
-export default class AppViews extends Component {
-  isAuthenticated = () => localStorage.getItem("credentials") !== null
+export default class App extends Component {
+  isAuthenticated = () => sessionStorage.getItem("credentials") !== null
 
 
   state ={ 
@@ -20,7 +17,7 @@ export default class AppViews extends Component {
     this.setState({ auth: this.isAuthenticated() })
   }
   render() {
-    console.log(this.activeUser())
+    // console.log(this.activeUser())
     return <React.Fragment>
       <IsAuth isAuthenticated={this.isAuthenticated} setAuth={this.setAuth} />
     </React.Fragment>

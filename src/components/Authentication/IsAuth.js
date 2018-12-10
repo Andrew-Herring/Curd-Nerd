@@ -1,9 +1,27 @@
-import { Route, Redirect } from 'react-router-dom'
 import React, { Component } from 'react';
+import CurdNerd from "../CurdNerd"
+import Login from "./Login"
 
 
-export default IsAuth extends Component {
+export default class IsAuth extends Component {
   activeUser() {
     return sessionStorage.getItem("credentials")
   }
-}
+
+  render() {
+    console.log(this.activeUser())
+    return (
+      <React.Fragment>
+      {this.props.isAuthenticated() ? (
+        <CurdNerd activeUser={this.activeUser} {...this.props} />
+      ) : (
+        <Login {...this.props} />
+
+
+
+      )}
+      </React.Fragment>
+    )
+    }
+  }
+  
