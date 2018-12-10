@@ -75,8 +75,22 @@ export default  Object.create(null, {
         e.json()
       )
     }
-  }
+  },
+
+
+getCheese: {
+  value: function(resource) {
+    return this.getAll(resource)
+       .then(cheeses => {
+         return cheeses.map(cheeses => {
+           return {
+             key: cheeses.name.id,
+             text: `${cheeses.name}`,
+             value: `${cheeses.id}`
+           };
+         });
+       });
+   }
+ }
 })
-
-
   
