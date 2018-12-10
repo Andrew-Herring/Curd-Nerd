@@ -1,36 +1,61 @@
 import { Route, Redirect } from 'react-router-dom'
 import React, { Component } from 'react';
-import cheeseBank from '../module/CheeseManager'
+import CreatePlate from './create/createPage'
+import cheeseBank from './module/CheeseManager'
+import Dashboard from './dashboard/dash'
 
-class AppViews extends Component {
-
+export default class AppViews extends Component {
+isAuthenticated = () => sessionStorage.getItem("credentials") !== null 
   
 
-state = {
-  plates: []
+  state = {
+    plates: []
   }
 
 
-  componentDidMount() {
-    const _state = {}
-    cheeseBank.all("animals")
-      .then(animals => (_state.animals = animals))
-      .then(() =>
-        cheeseBank.all("employees").then(
-          employees => (_state.employees = employees)
-        )
-      )
-      .then(() =>
-        cheeseBank.all("locations").then(
-          locations => (_state.locations = locations)
-        )
-      )
-      .then(() =>
-        cheeseBank.all("owners").then(owners => (_state.owners = owners))
-      )
-      .then(() => {
-        this.setState(_state)
-      })
+  // Functions
+  addPlate = obj =>
+    cheeseBank.add("plates", obj).then(plates =>
+      this.setState({ plates: plates })
+    )
+  editPlate = (id, obj) =>
+    cheeseBank.edit("plates", id, obj).then(plates =>
+      this.setState({ plates: plates })
+    )
+
+  deletePlates = id =>
+    cheeseBank.delete("plates", id).then(plates =>
+      this.setState({ plates: plates })
+    )
+
+
+
+  render() {
+    return (
+      <React.Fragment>
+
+    
+
+        <Route exact path="/" render={(props) => {
+          return <Dashboard {...props}
+            plates={this.state.plates}
+            addPlate={this.addPlate}
+            editPlate={this.editPlate}
+            deletePlate={this.deletePlate}
+            activeUser={this.props.activeUser}
+          />
+        }} />
+        <Route exact path="/create" render={(props) => {
+          return <CreatePlate {...props}
+            activeUser={this.props.activeUser}
+          />
+        }} />
+
+
+      </React.Fragment>
+    )
   }
+
+
 
 }

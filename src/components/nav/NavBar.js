@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import { Icon, Button } from 'semantic-ui-react'
-import Cheese from "../../images/cheese.png"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./NavBar.css"
 
