@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Button, Form, Grid, Header, Image, Message, Segment, Divider } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Image, Segment, Divider, Message } from 'semantic-ui-react'
 import Cheese from "../../images/cheese.png"
 import cheeseBank from "../module/CheeseManager"
 import "./Login.css"
@@ -90,7 +90,6 @@ body > div > div > div.login-form {
                   fluid
                   icon='lock'
                   iconPosition='left'
-                  type='password'
                 />
 
                 <Button type="submit" className="btn btn-primary" color="yellow" fluid size='large' onClick={this.handleLogin}>
@@ -101,6 +100,12 @@ body > div > div > div.login-form {
                   Register
                 </Button>
               </Segment>
+
+                 <Message onClick={this.handleRegister}>
+                 Did You Know?
+                 <br></br>
+                The art of cheese making is 7500+ years old!
+                </Message>
             </Form>
             
           </Grid.Column>
@@ -110,8 +115,4 @@ body > div > div > div.login-form {
   }
 }
 
-            // <Message onClick={this.handleRegister}>
-            //     Don't have an account? <a href='http://localhost:3003/register'>
-            //     <br></br>
-            //     Sign Up Here!</a>
-            // </Message>
+         

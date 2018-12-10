@@ -9,7 +9,6 @@ export default class IsAuth extends Component {
   }
 
   render() {
-    console.log(this.activeUser())
     return (
       <React.Fragment>
       {this.props.isAuthenticated() ? (
