@@ -10,13 +10,17 @@ export default class DashBoard extends Component {
         <Header>
           <div>
             <Image centered src={Cheese} size="tiny" />
+            <br></br>
+            <section className="dashBtn">
+            <Button content='Create a New Plate' color="yellow"
+          onClick={() => this.props.history.push(`/create`)} />
+            </section>
           </div>
         </Header>
 
-        <div className="dashBtn">
-          <Button fluid content='Start' color="yellow"
-          onClick={() => this.props.history.push(`/create`)} />
-        </div>
+
+        
+
 
       </React.Fragment>
     )

@@ -23,11 +23,11 @@ export default class NavBar extends Component {
         <ul className="nav nav-pills">
 
           <li className="nav-item">
-            <Link className="nav-link" to="/"><Icon color="yellow" name="clipboard" size="large" />Dashboard</Link>
+            <Link className="nav-link" to="/dash"><Icon color="yellow" name="clipboard" size="large" />Dashboard</Link>
           </li>
 
           <li className="nav-item">
-            <Link className="nav-link" to="/create"><Icon color="yellow" name="wrench" size="large" />Create</Link>
+            <Link className="nav-link" to="/create"><Icon color="yellow" name="pencil" size="large" />Create</Link>
           </li>
 
           <li className="nav-item">
