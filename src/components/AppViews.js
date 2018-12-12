@@ -12,7 +12,6 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
       users: [],
       plates: [],
       cheeses: [],
-      cheeseNames: [],
       cheese_milk: [],
       origins: [],
       styles: [],
@@ -62,19 +61,22 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
     }
 
   // Functions
-  addPlate = obj =>
-    cheeseBank.add("plates", obj).then(plates =>
-      this.setState({ plates: plates })
-    )
-  editPlate = (id, obj) =>
-    cheeseBank.edit("plates", id, obj).then(plates =>
-      this.setState({ plates: plates })
-    )
-
-  deletePlates = id =>
-    cheeseBank.delete("plates", id).then(plates =>
-      this.setState({ plates: plates })
-    )
+  addPlate = (plates, item) => {
+    return cheeseBank.add(plates, item)
+      .then(() => cheeseBank.getAll("plates"))
+      .then(plates => this.setState({
+        plates: plates
+      })
+      )
+  }
+  deletePlate = (plates, item) => {
+    return cheeseBank.delete(plates, item)
+    .then(() => cheeseBank.getAll("plates"))
+    .then(plates => this.setState({
+      plates: plates
+    }))
+  }
+  
 
 
 
@@ -82,10 +84,19 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
     return (
       <React.Fragment>
 
-        <Route exact path="/" render={(props) => {
+        {/* <Route exact path="/" render={(props) => {
           return <Dashboard {...props}
             plates={this.state.plates}
             addPlate={this.addPlate}
+            editPlate={this.editPlate}
+            deletePlate={this.deletePlate}
+            activeUser={this.props.activeUser}
+          />
+        }} /> */}
+        <Route exact path="/dash" render={(props) => {
+          return <Dashboard {...props}
+            plates={this.state.plates}
+            cheeses={this.state.cheeses}
             editPlate={this.editPlate}
             deletePlate={this.deletePlate}
             activeUser={this.props.activeUser}
@@ -95,6 +106,7 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
 
         <Route exact path="/create" render={(props) => {
           return <CreatePlate {...props}
+            addPlate={this.addPlate}
             cheeses={this.state.cheeses}
             activeUser={this.props.activeUser}
           />

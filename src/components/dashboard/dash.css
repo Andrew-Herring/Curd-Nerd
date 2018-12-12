@@ -1,5 +1,5 @@
 .dashBtn {
-  padding: 10px;
-  margin-left: 300px;
-  margin-right: 300px;
+  display: flex;
+  justify-content: center;
+  
 }

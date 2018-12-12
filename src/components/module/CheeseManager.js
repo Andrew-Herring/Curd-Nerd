@@ -133,6 +133,7 @@ getSoft: {
     .then(cheeses => {
       return cheeses.map(cheeses => {
         return {
+          id: cheeses.name.id,
           key: cheeses.name.id,
           text: `${cheeses.name}`,
           value: `${cheeses.id}`
@@ -148,6 +149,7 @@ getSoft: {
     .then(cheeses => {
       return cheeses.map(cheeses => {
         return {
+          id: cheeses.name.id,
           key: cheeses.name.id,
           text: `${cheeses.name}`,
           value: `${cheeses.id}`
@@ -163,6 +165,7 @@ getSoft: {
        .then(cheeses => {
          return cheeses.map(cheeses => {
            return {
+             id: cheeses.name.id,
              key: cheeses.name.id,
              text: `${cheeses.name}`,
              value: `${cheeses.id}`

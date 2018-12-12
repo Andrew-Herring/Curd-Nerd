@@ -23,11 +23,11 @@ export default class NavBar extends Component {
         <ul className="nav nav-pills">
 
           <li className="nav-item">
-            <Link className="nav-link" to="/"><Icon color="yellow" name="clipboard" size="large" />Dashboard</Link>
+            <Link className="nav-link" to="/dash"><Icon color="yellow" name="clipboard" size="large" />Dashboard</Link>
           </li>
 
           <li className="nav-item">
-            <Link className="nav-link" to="/create"><Icon color="yellow" name="wrench" size="large" />Create</Link>
+            <Link className="nav-link" to="/create"><Icon color="yellow" name="pencil" size="large" />Create</Link>
           </li>
 
           <li className="nav-item">
@@ -42,16 +42,8 @@ export default class NavBar extends Component {
           
 
         </ul>
-        <p id="navTagline">Welcome to Curd Nerd!</p>
+        <p id="navTagline">Welcome to Curd Nurd!</p>
         <div className="logbtn">
-        {/* <Button animated color="teal" onClick={() => {
-          document.location.href = 'http://localhost:3000/login'
-        }}>
-          <Button.Content visible>Login</Button.Content>
-          <Button.Content hidden>
-            <Icon name='sign-in alternate' />
-          </Button.Content>
-        </Button> */}
         <Button animated color="orange" 
             onClick={this.logout}>
           <Button.Content visible>Logout</Button.Content>
