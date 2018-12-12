@@ -4,72 +4,16 @@
       "username": "andy",
       "password": "finn",
       "id": 1
-    },
-    {
-      "username": "a",
-      "password": "a",
-      "id": 2
-    },
-    {
-      "username": "bob",
-      "password": "cheese",
-      "id": 3
-    },
-    {
-      "username": "greg",
-      "password": "cheese",
-      "id": 4
-    },
-    {
-      "username": "jenna",
-      "password": "a",
-      "id": 5
-    },
-    {
-      "username": "dek",
-      "password": "a",
-      "id": 6
-    },
-    {
-      "username": "lacey",
-      "password": "1",
-      "id": 7
-    },
-    {
-      "username": "mama",
-      "password": "Finn",
-      "id": 8
-    },
-    {
-      "username": "Dad",
-      "password": "howdy",
-      "id": 9
     }
   ],
   "plates": [
     {
-      "people": 3,
-      "softCheese": "11",
-      "agedCheese": "1",
-      "midCheese": "6",
-      "wildcard": null,
-      "id": 9
-    },
-    {
       "people": 2,
-      "softCheese": "12",
-      "agedCheese": "3",
-      "midCheese": "10",
-      "wildcard": "14",
-      "id": 10
-    },
-    {
-      "people": 3,
-      "softCheese": "12",
-      "agedCheese": "2",
-      "midCheese": "6",
-      "wildcard": "11",
-      "id": 11
+      "softCheese": 11,
+      "agedCheese": 1,
+      "midCheese": 6,
+      "wildcard": 15,
+      "id": 15
     }
   ],
   "milks": [

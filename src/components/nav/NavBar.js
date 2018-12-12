@@ -42,7 +42,7 @@ export default class NavBar extends Component {
           
 
         </ul>
-        <p id="navTagline">Welcome to Curd Nerd!</p>
+        <p id="navTagline">Welcome to Curd Nurd!</p>
         <div className="logbtn">
         {/* <Button animated color="teal" onClick={() => {
           document.location.href = 'http://localhost:3000/login'

@@ -16,7 +16,7 @@ export default class CreatePage extends Component {
     mid: null,
     people: null,
     wildcard: null
-    
+
   }
 
   componentDidMount() {
@@ -56,26 +56,16 @@ export default class CreatePage extends Component {
       })
   }
 
-  handleFieldChange = evt => {
-      // console.log(evt.target)
-        
-        //  = evt.target.value
-        // this.setState(stateToChange, () => {
-        //   console.log(this.state.soft)
-
-        // })
-  }
-      
 
 
   constructNewPlate = evt => {
           evt.preventDefault()
           const plates = {
-            people: this.state.people,
-            softCheese: this.state.soft,
-            agedCheese: this.state.aged,
-            midCheese: this.state.mid,
-            wildcard: this.state.wildcard,
+            people: Number(this.state.people),
+            softCheese: Number(this.state.soft),
+            agedCheese: Number(this.state.aged),
+            midCheese: Number(this.state.mid),
+            wildcard: Number(this.state.wildcard)
           }
 
           this.props.addPlate("plates", plates).then(() => this.props.history.push("/dash"))

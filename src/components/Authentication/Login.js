@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Button, Form, Grid, Header, Image, Segment, Divider, Message } from 'semantic-ui-react'
-import Cheese from "../../images/cheese.png"
+import CurdNurd from "../../images/CurdNurd.png"
 import cheeseBank from "../module/CheeseManager"
 import "./Login.css"
 
@@ -72,11 +72,12 @@ body > div > div > div.login-form {
         <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
           <Grid.Column style={{ maxWidth: 450 }}>
             <Header color='yellow' textAlign='center' size="huge">
-              Welcome to Curd Nerd!
+              {/* Welcome to Curd Nurd! */}
             </Header>
-            <Image src={Cheese} size='small' className="cheeseIcon" />
-            <br></br>
-            <Form size='large' onSubmit={this.handleLogin}>
+            <div  className="cheeseIcon">
+            <Image src={CurdNurd} size='large' />
+            </div>
+            <Form className="loginForm" size='large' onSubmit={this.handleLogin}>
               <Segment stacked>
                 <Form.Input onChange={this.handleFieldChange} type="username"
                   id="username"
@@ -101,8 +102,9 @@ body > div > div > div.login-form {
                 </Button>
               </Segment>
 
-                 <Message onClick={this.handleRegister}>
+                 <Message>
                  Did You Know?
+                 <br></br>
                  <br></br>
                 The art of cheese making is 7500+ years old!
                 </Message>

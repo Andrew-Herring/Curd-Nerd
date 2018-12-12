@@ -1,7 +1,5 @@
 .loginForm {
-  margin: 50px;
-  padding: 10px;
-  /* color: dodgerblue; */
+  justify-content: center;
 }
 
 .formLabel {
@@ -9,7 +7,9 @@
 }
 
 .cheeseIcon {
-  margin-left: 130px;
+display: flex;
+justify-content: center;
+width: 100%;
 }
 
 .welcomeTitle {
