@@ -1,4 +1,4 @@
-.loginForm {
+.login-form {
   justify-content: center;
 }
 
@@ -7,9 +7,9 @@
 }
 
 .cheeseIcon {
-display: flex;
+/* display: flex;
 justify-content: center;
-width: 100%;
+width: 100%; */
 }
 
 .welcomeTitle {

@@ -44,14 +44,6 @@ export default class NavBar extends Component {
         </ul>
         <p id="navTagline">Welcome to Curd Nurd!</p>
         <div className="logbtn">
-        {/* <Button animated color="teal" onClick={() => {
-          document.location.href = 'http://localhost:3000/login'
-        }}>
-          <Button.Content visible>Login</Button.Content>
-          <Button.Content hidden>
-            <Icon name='sign-in alternate' />
-          </Button.Content>
-        </Button> */}
         <Button animated color="orange" 
             onClick={this.logout}>
           <Button.Content visible>Logout</Button.Content>

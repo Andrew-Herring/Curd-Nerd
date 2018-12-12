@@ -16,7 +16,6 @@ export default class CreatePage extends Component {
     mid: null,
     people: null,
     wildcard: null
-
   }
 
   componentDidMount() {
@@ -51,7 +50,6 @@ export default class CreatePage extends Component {
     const stateToChange = {}
     stateToChange[id] = value
     this.setState(stateToChange, () => {
-        console.log(this.state)
 
       })
   }
@@ -59,17 +57,36 @@ export default class CreatePage extends Component {
 
 
   constructNewPlate = evt => {
-          evt.preventDefault()
-          const plates = {
-            people: Number(this.state.people),
-            softCheese: Number(this.state.soft),
-            agedCheese: Number(this.state.aged),
-            midCheese: Number(this.state.mid),
-            wildcard: Number(this.state.wildcard)
-          }
+      evt.preventDefault()
 
-          this.props.addPlate("plates", plates).then(() => this.props.history.push("/dash"))
-        }
+      let people = Number(this.state.people);
+      let soft = null
+      let aged = null;
+      let mid = null;
+      let wildcard = null;
+      if(this.state.soft !== null){
+        soft = Number(this.state.soft)
+      }
+      if(this.state.aged !== null){
+        aged = Number(this.state.aged)
+      }
+      if(this.state.mid !== null){
+        mid = Number(this.state.mid)
+      }
+      if(this.state.wildcard !== null){
+        wildcard = Number(this.state.wildcard)
+      }
+
+      const plates = {
+        people: people,
+        softCheese: soft,
+        agedCheese: aged,
+        midCheese: mid,
+        wildcard: wildcard
+      }
+      
+      this.props.addPlate("plates", plates).then(() => this.props.history.push("/dash"))
+  }
 
 
   render() {
@@ -135,7 +152,7 @@ export default class CreatePage extends Component {
 
           <br></br>
 
-          <Button color="teal" size="large" animated='vertical' className="createBtn"
+          <Button color="yellow" size="large" animated='vertical' className="createBtn"
             onClick={this.constructNewPlate}>
             <Button.Content hidden>All Done!</Button.Content>
             <Button.Content visible><Icon name='check' /></Button.Content>

@@ -69,6 +69,13 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
       })
       )
   }
+  deletePlate = (plates, item) => {
+    return cheeseBank.delete(plates, item)
+    .then(() => cheeseBank.getAll("plates"))
+    .then(plates => this.setState({
+      plates: plates
+    }))
+  }
   
 
 
@@ -89,6 +96,7 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
         <Route exact path="/dash" render={(props) => {
           return <Dashboard {...props}
             plates={this.state.plates}
+            cheeses={this.state.cheeses}
             editPlate={this.editPlate}
             deletePlate={this.deletePlate}
             activeUser={this.props.activeUser}
@@ -99,7 +107,7 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
         <Route exact path="/create" render={(props) => {
           return <CreatePlate {...props}
             addPlate={this.addPlate}
-            // cheeses={this.state.cheeses}
+            cheeses={this.state.cheeses}
             activeUser={this.props.activeUser}
           />
         }} />
