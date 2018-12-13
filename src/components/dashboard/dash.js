@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Button, Header, Card } from 'semantic-ui-react'
+import { Image, Button, Header, Card, Icon } from 'semantic-ui-react'
 import Cheese from "../../images/cheese.png"
 import "./dash.css"
 
@@ -20,8 +20,8 @@ export default class DashBoard extends Component {
 
         <section>
           {
-            this.props.plates.map(plates => 
-              
+            this.props.plates.map(plates =>
+
               <div key={plates.id}>
                 <Card.Group>
                   <Card>
@@ -51,23 +51,41 @@ export default class DashBoard extends Component {
                       </Card.Description>
                     </Card.Content>
                     <div>
-                    <Button color="teal" content='Share' />
+                    <Button animated color="teal"
+                        // onClick={() => this.props.sharePlate("plates",plates.id)} 
+                        >
+                        <Button.Content visible>Share</Button.Content>
+                        <Button.Content hidden>
+                          <Icon name='share' />
+                        </Button.Content>
+                       </Button>
 
-                    <Button color="yellow" content='Edit' />
+                      <Button animated color="yellow"
+                        onClick={() => this.props.history.push(`/edit/${plates.id}`)} >
+                        <Button.Content visible>Edit</Button.Content>
+                        <Button.Content hidden>
+                          <Icon name='pencil alternate' />
+                        </Button.Content>
+                       </Button>
 
-                    <Button color="orange" content='Remove' onClick={() =>
-                    this.props.deletePlate("plates", plates.id)} />
+                      <Button animated color="orange"
+                        onClick={() => this.props.deletePlate("plates", plates.id)}>
+                        <Button.Content visible>Remove</Button.Content>
+                        <Button.Content hidden>
+                          <Icon name='trash alternate' />
+                        </Button.Content>
+                       </Button> 
                     </div>
                   </Card>
                 </Card.Group>
               </div>
-              
-            )
-          }
+
+                )
+              }
         </section>
 
 
       </React.Fragment>
-    )
-  }
+        )
+      }
 }

@@ -91,7 +91,7 @@ export default class CreatePage extends Component {
 
   render() {
 
-          const options = [
+          const numbers = [
             { key: 1, text: '1', value: 1 },
             { key: 2, text: '2', value: 2 },
             { key: 3, text: '3', value: 3 },
@@ -115,8 +115,12 @@ export default class CreatePage extends Component {
 
         <div className="peopleDrop">
           <h3>First, how many people want cheese?</h3>
-          <Dropdown placeholder="How many people?" fluid selection item
-            options={options}
+          <Dropdown 
+            placeholder="How many people?" 
+            fluid  
+            selection 
+            item
+            options={numbers}
             onChange={this.handleDropdownChange}
             id="people" />
         </div>
@@ -127,25 +131,39 @@ export default class CreatePage extends Component {
 
         <section className="cheeseDrop">
           <h3>Soft Cheese</h3>
-          <Dropdown placeholder='Select a Cheese' fluid selection
+          <Dropdown 
+            placeholder='Select a Cheese' 
+            fluid 
+            selection
+            search
             options={this.state.softCheese}
             onChange={this.handleDropdownChange}
             id="soft" />
 
           <h3>Aged Cheese</h3>
-          <Dropdown placeholder='Select a Cheese' fluid search selection
+          <Dropdown placeholder='Select a Cheese' 
+            fluid 
+            search 
+            selection
             options={this.state.agedCheese}
             onChange={this.handleDropdownChange}
             id="aged" />
 
           <h3>Middle ground</h3>
-          <Dropdown placeholder='Select a Cheese' fluid search selection
+          <Dropdown placeholder='Select a Cheese' 
+            fluid 
+            search 
+            selection
             options={this.state.midCheese}
             onChange={this.handleDropdownChange}
             id="mid" />
 
-          <h3>Wildcard!</h3>
-          <Dropdown placeholder='Select a Cheese' fluid search selection
+          <h3>How about something unusual?</h3>
+          <Dropdown 
+            placeholder='Select a Cheese' 
+            fluid 
+            search 
+            selection
             options={this.state.wildcardCheese}
             onChange={this.handleDropdownChange}
             id="wildcard" />
