@@ -90,6 +90,7 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
 
 
   render() {
+    console.log("plate check", this.state.plates)
     return (
       <React.Fragment>
 

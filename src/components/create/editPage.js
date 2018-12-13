@@ -91,28 +91,27 @@ console.log("edited Plate", editedPlate)
       })
   }
 
-  softCheeseFinder = (softCheeseId) => {
-    const softCheeseName = this.props.cheeses.find(s => s.id === softCheeseId)
-    return(softCheeseName.name)
-  }
+  
 
-  render() {
-    console.log("state", this.state)
-    const numbers = [
-      { key: 1, text: '1', value: 1 },
-      { key: 2, text: '2', value: 2 },
-      { key: 3, text: '3', value: 3 },
-      { key: 4, text: '4', value: 4 },
-      { key: 5, text: '5', value: 5 },
-      { key: 6, text: '6', value: 6 },
-      { key: 7, text: '7', value: 7 },
-      { key: 8, text: '8', value: 8 },
-      { key: 9, text: '9', value: 9 },
-      { key: 10, text: '10', value: 10 },
-      { key: 11, text: '10+', value: 11 },
-    ]
-
-
+render() {
+  const numbers = [
+    { key: 1, text: '1', value: 1 },
+    { key: 2, text: '2', value: 2 },
+    { key: 3, text: '3', value: 3 },
+    { key: 4, text: '4', value: 4 },
+    { key: 5, text: '5', value: 5 },
+    { key: 6, text: '6', value: 6 },
+    { key: 7, text: '7', value: 7 },
+    { key: 8, text: '8', value: 8 },
+    { key: 9, text: '9', value: 9 },
+    { key: 10, text: '10', value: 10 },
+    { key: 11, text: '10+', value: 11 },
+  ]
+  
+  const softCheeseName = this.props.cheeses.find(p => p.id === this.state.softCheese) || {}
+  const midCheeseName = this.props.cheeses.find(p => p.id === this.state.midCheese) || {}
+  const agedCheeseName = this.props.cheeses.find(p => p.id === this.state.agedCheese) || {}
+  const wildCheeseName = this.props.cheeses.find(p => p.id === this.state.wildcard) || {}
 
     return (
       <React.Fragment>
@@ -143,7 +142,7 @@ console.log("edited Plate", editedPlate)
               fluid 
               search
               selection
-              text= {this.softCheeseFinder(plates.softCheeseId)}
+              text={softCheeseName.name}
               defaultValue={this.state.softCheese}
               options={this.state.softOptions}
               onChange={this.handleDropdownChange}
@@ -154,7 +153,7 @@ console.log("edited Plate", editedPlate)
               fluid 
               search 
               selection
-              text= {this.state.agedCheese}
+              text={agedCheeseName.name}
               defaultValue={this.state.agedCheese}
               options={this.state.agedOptions}
               onChange={this.handleDropdownChange}
@@ -165,7 +164,7 @@ console.log("edited Plate", editedPlate)
               fluid 
               search 
               selection
-              text= {this.state.midCheese}
+              text={midCheeseName.name}
               defaultValue={this.state.midCheese}
               options={this.state.midOptions}
               onChange={this.handleDropdownChange}
@@ -176,7 +175,7 @@ console.log("edited Plate", editedPlate)
               fluid 
               search 
               selection
-              text= {this.state.wildcard}
+              text={wildCheeseName.name}
               defaultValue={this.state.wildcard}
               options={this.state.wildcardOptions}
               onChange={this.handleDropdownChange}
@@ -191,7 +190,7 @@ console.log("edited Plate", editedPlate)
           </section>
       </React.Fragment>
 
-
+    
     )
   }
 }
