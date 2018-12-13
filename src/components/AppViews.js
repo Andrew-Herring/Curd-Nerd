@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import CreatePlate from './create/createPage'
 import cheeseBank from './module/CheeseManager'
 import Dashboard from './dashboard/dash'
+import EditPlate from './create/editPage'
+import Library from './library/library'
+import Share from './share/share'
 
 export default class AppViews extends Component {
 isAuthenticated = () => sessionStorage.getItem("credentials") !== null 
@@ -76,6 +79,12 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
       plates: plates
     }))
   }
+  editPlate = (id, plates) =>
+  cheeseBank.edit("plates", id, plates)
+    .then(() => cheeseBank.getAll("plates"))
+    .then(plates => this.setState({
+      plates: plates
+    }))
   
 
 
@@ -103,12 +112,42 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
           />
         }} />
 
+        <Route exact path="/library" render={(props) => {
+          return <Library {...props}
+            plates={this.state.plates}
+            cheeses={this.state.cheeses}
+            editPlate={this.editPlate}
+            deletePlate={this.deletePlate}
+            activeUser={this.props.activeUser}
+          />
+        }} />
+
+        <Route exact path="/share" render={(props) => {
+          return <Share {...props}
+            plates={this.state.plates}
+            cheeses={this.state.cheeses}
+            editPlate={this.editPlate}
+            deletePlate={this.deletePlate}
+            activeUser={this.props.activeUser}
+          />
+        }} />
 
         <Route exact path="/create" render={(props) => {
           return <CreatePlate {...props}
             addPlate={this.addPlate}
             cheeses={this.state.cheeses}
             activeUser={this.props.activeUser}
+          />
+        }} />
+
+        <Route exact path="/edit/:platesId(\d+)" render={(props) => {
+          return <EditPlate {...props}
+            plates={this.state.plates}
+            editPlate={this.editPlate}
+            cheeses={this.state.cheeses}
+            addPlate={this.addPlate}
+            activeUser={this.props.activeUser}
+
           />
         }} />
 

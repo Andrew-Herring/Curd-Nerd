@@ -31,11 +31,11 @@ export default class NavBar extends Component {
           </li>
 
           <li className="nav-item">
-            <Link className="nav-link" to="/"><Icon color="yellow" name="book" size="large" />Library</Link>
+            <Link className="nav-link" to="/library"><Icon color="yellow" name="book" size="large" />Library</Link>
           </li>
 
           <li className="nav-item">
-            <Link className="nav-link" to="/"><Icon color="yellow" name="share square" size="large" />Share</Link>
+            <Link className="nav-link" to="/share"><Icon color="yellow" name="share square" size="large" />Share</Link>
           </li>
 
           
