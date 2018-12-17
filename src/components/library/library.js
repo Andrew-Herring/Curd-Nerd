@@ -20,9 +20,9 @@ state = {
 
   render() {
 
-    const cheeseName = this.props.cheeses.find(n => n.id === this.state.name) || {}
-    const cheeseStyle = this.props.cheeses.find(s => s.id === this.state.styleId) || {}
-    const cheeseOrigin = this.props.cheeses.find(o => o.id === this.state.originId) || {}
+      const cheeseName = this.props.cheeses.find(n => n.id === this.state.name) || {}
+      const cheeseStyle = this.props.cheeses.find(s => s.id === this.state.styleId) || {}
+      const cheeseOrigin = this.props.cheeses.find(o => o.id === this.state.originId) || {}
   
 
     return(
