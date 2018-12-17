@@ -102,7 +102,6 @@ export default class CreatePage extends Component {
             { key: 8, text: '8', value: 8 },
             { key: 9, text: '9', value: 9 },
             { key: 10, text: '10', value: 10 },
-            { key: 11, text: '10+', value: 11 },
           ]
 
     return(
@@ -140,6 +139,15 @@ export default class CreatePage extends Component {
             onChange={this.handleDropdownChange}
             id="soft" />
 
+          <h3>Middle ground</h3>
+          <Dropdown placeholder='Select a Cheese' 
+            fluid 
+            search 
+            selection
+            options={this.state.midCheese}
+            onChange={this.handleDropdownChange}
+            id="mid" />
+
           <h3>Aged Cheese</h3>
           <Dropdown placeholder='Select a Cheese' 
             fluid 
@@ -149,14 +157,6 @@ export default class CreatePage extends Component {
             onChange={this.handleDropdownChange}
             id="aged" />
 
-          <h3>Middle ground</h3>
-          <Dropdown placeholder='Select a Cheese' 
-            fluid 
-            search 
-            selection
-            options={this.state.midCheese}
-            onChange={this.handleDropdownChange}
-            id="mid" />
 
           <h3>How about something unusual?</h3>
           <Dropdown 

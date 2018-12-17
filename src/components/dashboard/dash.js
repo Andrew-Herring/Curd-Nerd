@@ -1,9 +1,25 @@
 import React, { Component } from 'react';
 import { Image, Button, Header, Card, Icon } from 'semantic-ui-react'
+import CheeseManager from '../module/CheeseManager'
 import Cheese from "../../images/cheese.png"
 import "./dash.css"
 
 export default class DashBoard extends Component {
+ 
+ 
+  credentials = JSON.parse(localStorage.getItem('credentials'))
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
   render() {
     return (
       <React.Fragment>
@@ -52,7 +68,7 @@ export default class DashBoard extends Component {
                     </Card.Content>
                     <div>
                     <Button animated color="teal"
-                        // onClick={() => this.props.sharePlate("plates",plates.id)} 
+                        onClick={() => this.props.history.push(`/share`)} 
                         >
                         <Button.Content visible>Share</Button.Content>
                         <Button.Content hidden>

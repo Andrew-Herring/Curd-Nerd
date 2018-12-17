@@ -9,24 +9,21 @@
       "username": "finn",
       "password": "andy",
       "id": 2
+    },
+    {
+      "username": "sam",
+      "password": "1",
+      "id": 3
     }
   ],
   "plates": [
     {
-      "people": 9,
-      "softCheese": 8,
-      "agedCheese": 1,
-      "midCheese": 15,
-      "wildcard": 10,
-      "id": 1
-    },
-    {
-      "people": 4,
+      "people": 3,
       "softCheese": 11,
       "agedCheese": 3,
-      "midCheese": 41,
-      "wildcard": 14,
-      "id": 2
+      "midCheese": 15,
+      "wildcard": 17,
+      "id": 1
     }
   ],
   "milks": [

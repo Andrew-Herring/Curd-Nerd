@@ -84,7 +84,6 @@ export default class EditPlate extends Component {
       midCheese: mid,
       wildcard: wildcard
     }
-console.log("edited Plate", editedPlate)
     this.props.editPlate(this.state.id, editedPlate)
       .then(() => {
         this.props.history.push("/dash")
@@ -105,7 +104,6 @@ render() {
     { key: 8, text: '8', value: 8 },
     { key: 9, text: '9', value: 9 },
     { key: 10, text: '10', value: 10 },
-    { key: 11, text: '10+', value: 11 },
   ]
   
   const softCheeseName = this.props.cheeses.find(p => p.id === this.state.softCheese) || {}
@@ -126,6 +124,7 @@ render() {
               fluid 
               selection 
               item
+              text={this.state.people}
               defaultValue={this.state.people}
               options={numbers}
               onChange={this.handleDropdownChange}
@@ -148,6 +147,17 @@ render() {
               onChange={this.handleDropdownChange}
               id="softCheese" />
 
+            <h3>Middle ground</h3>
+            <Dropdown 
+              fluid 
+              search 
+              selection
+              text={midCheeseName.name}
+              defaultValue={this.state.midCheese}
+              options={this.state.midOptions}
+              onChange={this.handleDropdownChange}
+              id="midCheese" />
+
             <h3>Aged Cheese</h3>
             <Dropdown 
               fluid 
@@ -159,16 +169,7 @@ render() {
               onChange={this.handleDropdownChange}
               id="agedCheese" />
 
-            <h3>Middle ground</h3>
-            <Dropdown 
-              fluid 
-              search 
-              selection
-              text={midCheeseName.name}
-              defaultValue={this.state.midCheese}
-              options={this.state.midOptions}
-              onChange={this.handleDropdownChange}
-              id="midCheese" />
+            
 
             <h3>How about something unusual?</h3>
             <Dropdown 

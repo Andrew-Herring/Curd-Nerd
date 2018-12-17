@@ -10,7 +10,15 @@ export default class Share extends Component {
   render() {
 
     return(
-      <h2>Share - Coming Soon</h2>
-    )
+      <React.Fragment>
+      <Header>
+          <div>
+            <Image centered src={Cheese} size="tiny" />
+          </div>
+        </Header>
+
+      <h2>Share - Under Construction</h2>
+
+      </React.Fragment>  )
   }
 }
