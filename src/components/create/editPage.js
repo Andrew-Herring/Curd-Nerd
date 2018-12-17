@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Header, Dropdown, Button, Icon, Divider } from 'semantic-ui-react'
+import { Image, Header, Dropdown, Button, Icon, Divider, Container } from 'semantic-ui-react'
 import cheeseBank from '../module/CheeseManager'
 import Cheese from "../../images/cheese.png"
 import "./create.css"
@@ -59,7 +59,7 @@ export default class EditPlate extends Component {
   editPlate = evt => {
     evt.preventDefault()
 
-    let people = Number(this.state.people);
+    let people = this.state.people;
     let soft = null
     let aged = null;
     let mid = null;
@@ -90,39 +90,43 @@ export default class EditPlate extends Component {
       })
   }
 
-  
 
-render() {
-  const numbers = [
-    { key: 1, text: '1', value: 1 },
-    { key: 2, text: '2', value: 2 },
-    { key: 3, text: '3', value: 3 },
-    { key: 4, text: '4', value: 4 },
-    { key: 5, text: '5', value: 5 },
-    { key: 6, text: '6', value: 6 },
-    { key: 7, text: '7', value: 7 },
-    { key: 8, text: '8', value: 8 },
-    { key: 9, text: '9', value: 9 },
-    { key: 10, text: '10', value: 10 },
-  ]
-  
-  const softCheeseName = this.props.cheeses.find(p => p.id === this.state.softCheese) || {}
-  const midCheeseName = this.props.cheeses.find(p => p.id === this.state.midCheese) || {}
-  const agedCheeseName = this.props.cheeses.find(p => p.id === this.state.agedCheese) || {}
-  const wildCheeseName = this.props.cheeses.find(p => p.id === this.state.wildcard) || {}
+
+  render() {
+    const numbers = [
+      { key: 1, text: '1', value: 1 },
+      { key: 2, text: '2', value: 2 },
+      { key: 3, text: '3', value: 3 },
+      { key: 4, text: '4', value: 4 },
+      { key: 5, text: '5', value: 5 },
+      { key: 6, text: '6', value: 6 },
+      { key: 7, text: '7', value: 7 },
+      { key: 8, text: '8', value: 8 },
+      { key: 9, text: '9', value: 9 },
+      { key: 10, text: 'everyone at the NSS demo', value: "everyone at the NSS demo" },
+    ]
+
+    const softCheeseName = this.props.cheeses.find(p => p.id === this.state.softCheese) || {}
+    const midCheeseName = this.props.cheeses.find(p => p.id === this.state.midCheese) || {}
+    const agedCheeseName = this.props.cheeses.find(p => p.id === this.state.agedCheese) || {}
+    const wildCheeseName = this.props.cheeses.find(p => p.id === this.state.wildcard) || {}
 
     return (
       <React.Fragment>
-        <Header>
+        <Header textAlign='center'>
           <div>
             <Image centered src={Cheese} size="tiny" />
           </div>
+          <br></br>
+          <Header.Content>Making changes?</Header.Content>
         </Header>
-          <div className="peopleDrop">
+        <div className='createDisplay'>
+          <div className='createForm'>
+            <div className="peopleDrop">
             <h3>First, how many people want cheese?</h3>
-            <Dropdown placeholder="How many people?" 
-              fluid 
-              selection 
+            <Dropdown placeholder="How many people?"
+              fluid
+              selection
               item
               text={this.state.people}
               defaultValue={this.state.people}
@@ -137,8 +141,8 @@ render() {
 
           <section className="cheeseDrop">
             <h3>Soft Cheese</h3>
-            <Dropdown 
-              fluid 
+            <Dropdown
+              fluid
               search
               selection
               text={softCheeseName.name}
@@ -148,9 +152,9 @@ render() {
               id="softCheese" />
 
             <h3>Middle ground</h3>
-            <Dropdown 
-              fluid 
-              search 
+            <Dropdown
+              fluid
+              search
               selection
               text={midCheeseName.name}
               defaultValue={this.state.midCheese}
@@ -159,9 +163,9 @@ render() {
               id="midCheese" />
 
             <h3>Aged Cheese</h3>
-            <Dropdown 
-              fluid 
-              search 
+            <Dropdown
+              fluid
+              search
               selection
               text={agedCheeseName.name}
               defaultValue={this.state.agedCheese}
@@ -169,12 +173,12 @@ render() {
               onChange={this.handleDropdownChange}
               id="agedCheese" />
 
-            
+
 
             <h3>How about something unusual?</h3>
-            <Dropdown 
-              fluid 
-              search 
+            <Dropdown
+              fluid
+              search
               selection
               text={wildCheeseName.name}
               defaultValue={this.state.wildcard}
@@ -189,9 +193,30 @@ render() {
               <Button.Content visible><Icon name='check' /></Button.Content>
             </Button>
           </section>
+          </div>
+          <section className='sideBox'>
+            <Container>
+
+              <Header as='h3' textAlign='center'>Switch up that boring plate!</Header>
+              <Divider />
+              <h3>Get a variety of ages!</h3>
+              <p>These drop downs already sort our cheeses from youngest to oldest!  Start off by choosing a cheese from each drop down!</p>
+
+              <h3>Mix up the Milk!</h3>
+              <p>You can make your cheese plate more diverse by choosing cheeses made from different milks i.e. Cow, Goat and Sheep!</p>
+
+              <h3>C-C-Combo!</h3>
+              <p>You can also try and get cheeses with diffent origins for the ultimate combo move!  Use the library page as a reference and get creative!  While you are at the store don't forget to grab some charcuterie, grapes and even honey to push your cheese power levels over 9000!</p>
+
+              <br></br>
+              <br></br>
+              <iframe className='gif' src="https://giphy.com/embed/1pooFlqcmEz9AgNeRZ" title='eating cheese' width="330" height="200" frameBorder="0" allowFullScreen></iframe>
+            </Container>
+          </section>
+        </div>
       </React.Fragment>
 
-    
+
     )
   }
 }

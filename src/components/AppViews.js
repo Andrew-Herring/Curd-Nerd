@@ -17,7 +17,7 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
       users: [],
       plates: [],
       cheeses: [],
-      cheese_milk: [],
+      // cheese_milk: [],
       origins: [],
       styles: [],
       milks: [],
@@ -42,10 +42,10 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
           newState.cheeses = allCheeses
         })
   
-      cheeseBank.getAll("cheese_milk")
-        .then(allCheeseMilk => {
-          newState.cheeseMilk = allCheeseMilk
-        })
+      // cheeseBank.getAll("cheese_milk")
+      //   .then(allCheeseMilk => {
+      //     newState.cheeseMilk = allCheeseMilk
+      //   })
   
       cheeseBank.getAll("origins")
         .then(allOrigins => {
@@ -133,11 +133,11 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
         <Route exact path="/library" render={(props) => {
          if (this.isAuthenticated()) {
           return <Library {...props}
-            plates={this.state.plates}
             cheeses={this.state.cheeses}
-            editPlate={this.editPlate}
-            deletePlate={this.deletePlate}
             activeUser={this.props.activeUser}
+            styles={this.state.styles}
+            origins={this.state.origins}
+            milks={this.state.milks}
           />
          }
           else {

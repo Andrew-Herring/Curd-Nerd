@@ -1,19 +1,39 @@
 .cheeseDrop {
-  margin-left: 100px;
+  margin-left: 135px;
   padding: 10px;
   width: 500px;
 }
 .peopleDrop {
-  margin-left: 100px;
+  margin-left: 135px;
   padding: 10px;
   width: 500px;
 }
+
+.createDisplay {
+  display: flex;
+}
+
 .createBtn {
-  margin-left: 100px;
+  margin-left: 135px;
   padding: 10px;
   width: 481px;
 }
 
-.cheeseIcon {
-  border: 1px border solid red;
+.createForm {
+  display: flex;
+  flex-direction: row;
+  width: 49%;
+  flex-wrap: wrap;
+}
+
+.sideBox {
+  /* border: 2px solid gold; */
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  width: 40%;
+  flex-wrap: wrap;
 }
