@@ -1,5 +1,24 @@
 .dashBtn {
   display: flex;
   justify-content: center;
-  
+}
+
+.dash {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px;
+  justify-content: center;
+}
+
+.dashCards {
+  border: 1px solid white;
+  margin: 10px;
+  box-shadow: 4px 4px 4px gray;
+  border-radius: 5px;
+}
+
+.dashBtns {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
 }

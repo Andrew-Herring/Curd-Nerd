@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Image, Button, Header, Card, Icon } from 'semantic-ui-react'
-import CheeseManager from '../module/CheeseManager'
 import Cheese from "../../images/cheese.png"
 import "./dash.css"
 
@@ -11,39 +10,33 @@ export default class DashBoard extends Component {
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
   render() {
     return (
       <React.Fragment>
-        <Header>
+        <Header as='h2' textAlign='center'>
           <div>
             <Image centered src={Cheese} size="tiny" />
+            <br></br>
+            <Header.Content>Dashboard</Header.Content>
+            </div>
             <br></br>
             <section className="dashBtn">
               <Button content='Create a New Plate' color="yellow"
                 onClick={() => this.props.history.push(`/create`)} />
             </section>
-          </div>
         </Header>
 
-        <section>
+        <section className='dash'>
           {
             this.props.plates.map(plates =>
 
               <div key={plates.id}>
+              <section className="dashCards">
                 <Card.Group>
                   <Card>
                     <Card.Content>
                       <Card.Header>Plate #{plates.id}</Card.Header>
-                      <Card.Meta>Made for {plates.people} people</Card.Meta>
+                      <Card.Meta>Made for {plates.people}</Card.Meta>
                       <Card.Description>
                         {
                           plates.softCheese &&
@@ -66,7 +59,7 @@ export default class DashBoard extends Component {
                         }
                       </Card.Description>
                     </Card.Content>
-                    <div>
+                    <div className='dashBtns'>
                     <Button animated color="teal"
                         onClick={() => this.props.history.push(`/share`)} 
                         >
@@ -94,6 +87,7 @@ export default class DashBoard extends Component {
                     </div>
                   </Card>
                 </Card.Group>
+                </section>
               </div>
 
                 )

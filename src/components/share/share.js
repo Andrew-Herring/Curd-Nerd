@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Button, Header, Card, Icon } from 'semantic-ui-react'
+import { Image, Header } from 'semantic-ui-react'
 import Cheese from "../../images/cheese.png"
 
 
@@ -11,13 +11,15 @@ export default class Share extends Component {
 
     return(
       <React.Fragment>
-      <Header>
+      <Header as='h2' textAlign='center'>
           <div>
             <Image centered src={Cheese} size="tiny" />
+            <br></br>
+            <Header.Content>Share your creations!</Header.Content>
           </div>
+          
         </Header>
 
-      <h2>Share - Under Construction</h2>
 
       </React.Fragment>  )
   }

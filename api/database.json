@@ -16,16 +16,7 @@
       "id": 3
     }
   ],
-  "plates": [
-    {
-      "people": 3,
-      "softCheese": 11,
-      "agedCheese": 3,
-      "midCheese": 15,
-      "wildcard": 17,
-      "id": 1
-    }
-  ],
+  "plates": [],
   "milks": [
     {
       "name": "Cow",
@@ -397,6 +388,7 @@
       "originId": 2,
       "age": 24,
       "styleId": 3,
+      "milkId": 1,
       "raw": true,
       "wildcard": false,
       "id": 1
@@ -406,6 +398,7 @@
       "originId": 3,
       "age": 10,
       "styleId": 6,
+      "milkId": 1,
       "raw": true,
       "wildcard": false,
       "id": 2
@@ -415,6 +408,7 @@
       "originId": 3,
       "age": 10,
       "styleId": 7,
+      "milkId": 1,
       "raw": true,
       "wildcard": false,
       "id": 3
@@ -424,6 +418,7 @@
       "originId": 8,
       "age": 12,
       "styleId": 1,
+      "milkId": 1,
       "raw": false,
       "wildcard": false,
       "id": 4
@@ -433,6 +428,7 @@
       "originId": 4,
       "age": 5,
       "styleId": 6,
+      "milkId": 1,
       "raw": false,
       "wildcard": false,
       "id": 5
@@ -442,6 +438,7 @@
       "originId": 6,
       "age": 6,
       "styleId": 1,
+      "milkId": 1,
       "raw": false,
       "wildcard": false,
       "id": 6
@@ -451,6 +448,7 @@
       "originId": 5,
       "age": 15,
       "styleId": 1,
+      "milkId": 1,
       "raw": false,
       "wildcard": false,
       "id": 7
@@ -458,8 +456,9 @@
     {
       "name": "3 Month Manchego",
       "originId": 4,
-      "age": 3,
+      "age": 2,
       "styleId": 7,
+      "milkId": 3,
       "raw": false,
       "wildcard": false,
       "id": 8
@@ -469,6 +468,7 @@
       "originId": 4,
       "age": 12,
       "styleId": 7,
+      "milkId": 2,
       "raw": false,
       "wildcard": false,
       "id": 9
@@ -478,6 +478,7 @@
       "originId": 4,
       "age": 7,
       "styleId": 6,
+      "milkId": 3,
       "raw": false,
       "wildcard": true,
       "id": 10
@@ -487,6 +488,7 @@
       "originId": 1,
       "age": 2,
       "styleId": 2,
+      "milkId": 1,
       "raw": false,
       "wildcard": true,
       "id": 11
@@ -495,7 +497,7 @@
       "name": "Pecorino Romano",
       "originId": 2,
       "age": 10,
-      "style": "parmesan",
+      "styleId": 3,
       "raw": true,
       "wildcard": false,
       "id": 13
@@ -505,6 +507,7 @@
       "originId": 7,
       "age": 2,
       "styleId": 6,
+      "milkId": 3,
       "raw": false,
       "wildcard": true,
       "id": 14
@@ -514,6 +517,7 @@
       "originId": 4,
       "age": 5,
       "styleId": 6,
+      "milkId": 2,
       "raw": false,
       "wildcard": true,
       "id": 15
@@ -523,6 +527,7 @@
       "originId": 1,
       "age": 2,
       "styleId": 6,
+      "milkId": 2,
       "raw": false,
       "wildcard": true,
       "id": 16
@@ -532,6 +537,7 @@
       "originId": 4,
       "age": 3,
       "styleId": 7,
+      "milkId": 2,
       "raw": false,
       "wildcard": true,
       "id": 17
@@ -541,6 +547,7 @@
       "originId": 1,
       "age": 10,
       "styleId": 7,
+      "milkId": 1,
       "raw": true,
       "wildcard": true,
       "id": 18
@@ -550,6 +557,7 @@
       "originId": 1,
       "age": 5,
       "styleId": 6,
+      "milkId": 2,
       "raw": false,
       "wildcard": true,
       "id": 19
@@ -559,6 +567,7 @@
       "originId": 1,
       "age": 15,
       "styleId": 7,
+      "milkId": 1,
       "raw": true,
       "wildcard": true,
       "id": 20
@@ -568,6 +577,7 @@
       "originId": 4,
       "age": 2,
       "styleId": 5,
+      "milkId": 3,
       "raw": false,
       "wildcard": true,
       "id": 21
@@ -577,6 +587,7 @@
       "originId": 1,
       "age": 2,
       "styleId": 2,
+      "milkId": 1,
       "raw": false,
       "wildcard": false,
       "id": 22
@@ -586,6 +597,7 @@
       "originId": 1,
       "age": 1,
       "styleId": 9,
+      "milkId": 1,
       "raw": false,
       "wildcard": false,
       "id": 23
@@ -595,6 +607,7 @@
       "originId": 2,
       "age": 1,
       "styleId": 9,
+      "milkId": 2,
       "raw": false,
       "wildcard": false,
       "id": 24
@@ -604,6 +617,7 @@
       "originId": 1,
       "age": 2,
       "styleId": 9,
+      "milkId": 1,
       "raw": false,
       "wildcard": false,
       "id": 25
@@ -613,6 +627,7 @@
       "originId": 3,
       "age": 4,
       "styleId": 6,
+      "milkId": 1,
       "raw": true,
       "wildcard": true,
       "id": 26
@@ -622,6 +637,7 @@
       "originId": 2,
       "age": 2,
       "styleId": 10,
+      "milkId": 1,
       "raw": false,
       "wildcard": true,
       "id": 29
@@ -631,6 +647,7 @@
       "originId": 8,
       "age": 15,
       "styleId": 1,
+      "milkId": 1,
       "raw": false,
       "wildcard": false,
       "id": 30
@@ -640,6 +657,7 @@
       "originId": 10,
       "age": 10,
       "styleId": 1,
+      "milkId": 1,
       "raw": false,
       "wildcard": false,
       "id": 31
@@ -649,6 +667,7 @@
       "originId": 5,
       "age": 12,
       "styleId": 1,
+      "milkId": 1,
       "raw": false,
       "wildcard": false,
       "id": 32
@@ -658,6 +677,7 @@
       "originId": 11,
       "age": 12,
       "styleId": 1,
+      "milkId": 1,
       "raw": false,
       "wildcard": true,
       "id": 33
@@ -667,6 +687,7 @@
       "originId": 1,
       "age": 12,
       "styleId": 1,
+      "milkId": 1,
       "raw": false,
       "wildcard": true,
       "id": 34
@@ -676,6 +697,7 @@
       "originId": 2,
       "age": 2,
       "styleId": 6,
+      "milkId": 1,
       "raw": false,
       "wildcard": false,
       "id": 35
@@ -685,6 +707,7 @@
       "originId": 2,
       "age": 3,
       "styleId": 6,
+      "milkId": 1,
       "raw": true,
       "wildcard": true,
       "id": 36
@@ -694,6 +717,7 @@
       "originId": 1,
       "age": 2,
       "styleId": 11,
+      "milkId": 1,
       "raw": false,
       "wildcard": true,
       "id": 37
@@ -703,6 +727,7 @@
       "originId": 12,
       "age": 1,
       "styleId": 11,
+      "milkId": 1,
       "raw": false,
       "wildcard": false,
       "id": 38
@@ -712,15 +737,17 @@
       "originId": 6,
       "age": 2,
       "styleId": 11,
+      "milkId": 1,
       "raw": false,
       "wildcard": true,
       "id": 39
     },
     {
-      "name": "Buttermilk Blue",
+      "name": "ButtermilkId Blue",
       "originId": 6,
       "age": 2,
       "styleId": 11,
+      "milkId": 1,
       "raw": false,
       "wildcard": false,
       "id": 40
@@ -730,6 +757,7 @@
       "originId": 7,
       "age": 8,
       "styleId": 11,
+      "milkId": 1,
       "raw": false,
       "wildcard": true,
       "id": 41
@@ -739,6 +767,7 @@
       "originId": 6,
       "age": 11,
       "styleId": 6,
+      "milkId": 1,
       "raw": false,
       "wildcard": true,
       "id": 42
@@ -748,6 +777,7 @@
       "originId": 1,
       "age": 2,
       "styleId": 11,
+      "milkId": 1,
       "raw": false,
       "wildcard": true,
       "id": 43
@@ -757,6 +787,7 @@
       "originId": 6,
       "age": 10,
       "styleId": 4,
+      "milkId": 1,
       "raw": false,
       "wildcard": true,
       "id": 44
@@ -766,6 +797,7 @@
       "originId": 2,
       "age": 3,
       "styleId": 11,
+      "milkId": 1,
       "raw": false,
       "wildcard": false,
       "id": 46
@@ -775,6 +807,7 @@
       "originId": 2,
       "age": 1,
       "styleId": 5,
+      "milkId": 1,
       "raw": false,
       "wildcard": false,
       "id": 48
@@ -784,6 +817,7 @@
       "originId": 11,
       "age": 7,
       "styleId": 9,
+      "milkId": 1,
       "raw": false,
       "wildcard": true,
       "id": 49
@@ -793,6 +827,7 @@
       "originId": 5,
       "age": 3,
       "styleId": 1,
+      "milkId": 1,
       "raw": false,
       "wildcard": true,
       "id": 50
@@ -802,6 +837,7 @@
       "originId": 13,
       "age": 12,
       "styleId": 1,
+      "milkId": 1,
       "raw": true,
       "wildcard": false,
       "id": 51
