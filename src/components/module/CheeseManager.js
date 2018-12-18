@@ -22,37 +22,31 @@ export default  Object.create(null, {
   },
 
   getYoung: {
-    value: (resource) => {
+    value: (resource, credentials) => {
       return fetch(`${cheeseBank}/${resource}?age=1&age=2&age=3&age=4`)
       .then(result => result.json())
     }
   },
 
   getMidRange: {
-    value: (resource) => {
+    value: (resource, credentials) => {
       return fetch(`${cheeseBank}/${resource}?age=5&age=6&age=7&age=8&age=9`)
       .then(result => result.json())
     }
   },
   getOldRange: {
-    value: (resource) => {
+    value: (resource, credentials) => {
       return fetch(`${cheeseBank}/${resource}?age=10&age=11&age=12&age=15&age=24`)
       .then(result => result.json())
     }
   },
   getWildCard: {
-    value: (resource) => {
+    value: (resource, credentials) => {
       return fetch(`${cheeseBank}/${resource}?wildcard=true`)
       .then(result => result.json())
     }
   },
 
-  getAllByUser: {
-    value: (resource, credentials) => {
-      return fetch(`${cheeseBank}/${resource}?userId=${credentials}`)
-        .then(result => result.json())
-    }
-  },
 
   delete: {
     value: (resource, id) => {

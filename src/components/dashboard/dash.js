@@ -6,7 +6,7 @@ import "./dash.css"
 export default class DashBoard extends Component {
  
  
-  credentials = JSON.parse(localStorage.getItem('credentials'))
+  credentials = JSON.parse(sessionStorage.getItem('credentials'))
  
  
  
