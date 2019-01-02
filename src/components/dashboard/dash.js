@@ -2,13 +2,27 @@ import React, { Component } from 'react';
 import { Image, Button, Header, Card, Icon } from 'semantic-ui-react'
 import Cheese from "../../images/cheese.png"
 import "./dash.css"
+import CheeseManager from '../module/CheeseManager';
 
 export default class DashBoard extends Component {
  
  
-  credentials = JSON.parse(localStorage.getItem('credentials'))
+  credentials = sessionStorage.getItem('credentials')
  
  
+  // componentDidMount() {
+  //   const newState = {}
+  //   CheeseManager.getAllByUser("plates", this.credentials)
+  //     .then(allPlates => {
+        
+  //       newState.plates = allPlates
+  //       console.log(newState)
+  //       this.setState(newState)
+  //     })
+  //     // .then(() =>
+  //     //   this.setState(newState))
+  // }
+
  
   render() {
     return (

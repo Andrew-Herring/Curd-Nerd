@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Button, Form, Grid, Header, Image, Segment, Divider, Message } from 'semantic-ui-react'
-import CurdNurd from "../../images/CurdNurd.png"
+import CurdNurd from "../../images/logo.png"
 import cheeseBank from "../module/CheeseManager"
 import "./Login.css"
 
@@ -24,7 +24,7 @@ export default class Login extends Component {
       password: this.state.password
     }
     if (!this.state.username || !this.state.password) {
-      alert("Fill out dem forms")
+      alert("Fill out all of the fields before regestering")
     } else if (this.state.username || this.state.password) {
       cheeseBank.searchUsername(this.state.username).then(users => {
         if (users.length) {
@@ -43,12 +43,12 @@ export default class Login extends Component {
   handleLogin = e => {
     e.preventDefault()
     if (!this.state.username || !this.state.password) {
-      alert("You thought")
+      alert("Fill out all of the fields before logging in")
     } else if (this.state.username || this.state.password) {
       cheeseBank.searchNP(this.state.username, this.state.password).then(
         user => {
           if (!user.length) {
-            alert("Forgot your information? Shame.")
+            alert("Incorrect username or password")
           } else if (user.length) {
             sessionStorage.setItem("credentials", parseInt(user[0].id))
             this.props.setAuth()

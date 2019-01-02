@@ -10,8 +10,11 @@ import Login from './Authentication/Login'
 import IsAuth from './Authentication/IsAuth'
 
 export default class AppViews extends Component {
-isAuthenticated = () => sessionStorage.getItem("credentials") !== null 
+  isAuthenticated = () => sessionStorage.getItem("credentials") !== null
+  credentials = sessionStorage.getItem('credentials')
+
   
+
 
   state = {
       users: [],
@@ -23,16 +26,23 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
       milks: [],
       isLoaded: false
     }
+    clearState() {
+      console.log("clearState")
+      this.setState({
+        plates: []
+      })
+    }
   
     componentDidMount() {
       const newState = {}
+      console.log("cred", this.credentials)
   
       cheeseBank.getAll("users")
         .then(allUsers => {
           newState.users = allUsers
         })
   
-      cheeseBank.getAll("plates")
+      cheeseBank.getAllByUser("plates", sessionStorage.getItem(`credentials`))
         .then(allPlates => {
           newState.plates = allPlates
         })
@@ -68,7 +78,7 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
   // Functions
   addPlate = (plates, item) => {
     return cheeseBank.add(plates, item)
-      .then(() => cheeseBank.getAll("plates"))
+      .then(() => cheeseBank.getAllByUser("plates", sessionStorage.getItem(`credentials`)))
       .then(plates => this.setState({
         plates: plates
       })
@@ -76,19 +86,19 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
   }
   deletePlate = (plates, item) => {
     return cheeseBank.delete(plates, item)
-    .then(() => cheeseBank.getAll("plates"))
+    .then(() => cheeseBank.getAllByUser("plates", sessionStorage.getItem(`credentials`)))
     .then(plates => this.setState({
       plates: plates
     }))
   }
   editPlate = (id, plates) =>
   cheeseBank.edit("plates", id, plates)
-    .then(() => cheeseBank.getAll("plates"))
+    .then(() => cheeseBank.getAllByUser("plates", sessionStorage.getItem(`credentials`)))
     .then(plates => this.setState({
       plates: plates
     }))
   
-
+    renderPlates
 
 
   render() {
@@ -117,6 +127,7 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
         <Route exact path="/dash" render={(props) => {
           if (this.isAuthenticated()) {
           return <Dashboard {...props}
+            users={this.state.users}
             plates={this.state.plates}
             cheeses={this.state.cheeses}
             editPlate={this.editPlate}
@@ -124,7 +135,8 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
             activeUser={this.props.activeUser}
           />
         } 
-          else {
+          else { 
+            this.clearState()
             return <Redirect to="/login" />
         }
       }} />
@@ -141,6 +153,7 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
           />
          }
           else {
+            this.clearState()
             return <Redirect to="/login" />
           }
         }} />
@@ -157,6 +170,7 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
           />
         }
         else {
+          this.clearState()
           return <Redirect to="/login" />
         }
         }} />
@@ -165,12 +179,14 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
         <Route exact path="/create" render={(props) => {
          if (this.isAuthenticated()) {
           return <CreatePlate {...props}
+            users={this.state.users}
             addPlate={this.addPlate}
             cheeses={this.state.cheeses}
             activeUser={this.props.activeUser}
           />
         }
         else {
+          this.clearState()
           return <Redirect to="/login" />
         }
         }} />
@@ -179,6 +195,7 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
         <Route exact path="/edit/:platesId(\d+)" render={(props) => {
         if (this.isAuthenticated()) {
           return <EditPlate {...props}
+            users={this.state.users}
             plates={this.state.plates}
             editPlate={this.editPlate}
             cheeses={this.state.cheeses}
@@ -187,10 +204,11 @@ isAuthenticated = () => sessionStorage.getItem("credentials") !== null
           />
         }
         else {
+          this.clearState()
           return <Redirect to="/login" />
         }
 
-        }} />
+        }}/>
 
       
       </React.Fragment>

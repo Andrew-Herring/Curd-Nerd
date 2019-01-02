@@ -57,6 +57,7 @@ export default class CreatePage extends Component {
 
 
   constructNewPlate = evt => {
+    const credentials = sessionStorage.getItem('credentials')
     evt.preventDefault()
 
     let people = this.state.people;
@@ -82,9 +83,10 @@ export default class CreatePage extends Component {
       softCheese: soft,
       agedCheese: aged,
       midCheese: mid,
-      wildcard: wildcard
+      wildcard: wildcard,
+      userId: credentials
     }
-
+    console.log(plates)
     this.props.addPlate("plates", plates).then(() => this.props.history.push("/dash"))
   }
 
@@ -118,7 +120,7 @@ export default class CreatePage extends Component {
             <div className="peopleDrop">
               <h3>First, how many people want cheese?</h3>
               <Dropdown
-                placeholder="How many people?"
+                placeholder="How many are you serving?"
                 fluid
                 selection
                 item
@@ -134,7 +136,7 @@ export default class CreatePage extends Component {
             <section className="cheeseDrop">
               <h3>Soft Cheese</h3>
               <Dropdown
-                placeholder='Select a Cheese'
+                placeholder='Cheeses aged 4 months and younger'
                 fluid
                 selection
                 search
@@ -144,7 +146,7 @@ export default class CreatePage extends Component {
 
               <h3>Middle ground</h3>
               <Dropdown
-                placeholder='Select a Cheese'
+                placeholder='Cheeses aged 5 to 9 months'
                 fluid
                 search
                 selection
@@ -154,7 +156,7 @@ export default class CreatePage extends Component {
 
               <h3>Aged Cheese</h3>
               <Dropdown
-                placeholder='Select a Cheese'
+                placeholder='Cheeses 10+ months old'
                 fluid
                 search
                 selection
@@ -165,7 +167,7 @@ export default class CreatePage extends Component {
 
               <h3>How about something unusual?</h3>
               <Dropdown
-                placeholder='Select a Cheese'
+                placeholder='Try something different!'
                 fluid
                 search
                 selection

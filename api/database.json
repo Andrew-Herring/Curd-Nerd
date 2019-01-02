@@ -11,12 +11,46 @@
       "id": 2
     },
     {
-      "username": "sam",
-      "password": "1",
+      "username": "Andy",
+      "password": "finn",
       "id": 3
+    },
+    {
+      "username": "newguy",
+      "password": "1",
+      "id": 4
+    },
+    {
+      "username": "cheeseguy",
+      "password": "1",
+      "id": 5
+    },
+    {
+      "username": "newnewguy",
+      "password": "1",
+      "id": 6
     }
   ],
-  "plates": [],
+  "plates": [
+    {
+      "people": null,
+      "softCheese": null,
+      "agedCheese": null,
+      "midCheese": null,
+      "wildcard": null,
+      "userId": "4",
+      "id": 18
+    },
+    {
+      "people": null,
+      "softCheese": null,
+      "agedCheese": null,
+      "midCheese": null,
+      "wildcard": null,
+      "userId": "1",
+      "id": 19
+    }
+  ],
   "milks": [
     {
       "name": "Cow",
@@ -133,6 +167,10 @@
     {
       "name": "Brined",
       "id": 12
+    },
+    {
+      "name": "Gouda",
+      "id": 13
     }
   ],
   "cheese_milk": [
@@ -743,7 +781,7 @@
       "id": 39
     },
     {
-      "name": "ButtermilkId Blue",
+      "name": "Buttermilk Blue",
       "originId": 6,
       "age": 2,
       "styleId": 11,
@@ -841,6 +879,26 @@
       "raw": true,
       "wildcard": false,
       "id": 51
+    },
+    {
+      "name": "Midnight Moon",
+      "originId": 9,
+      "age": 12,
+      "styleId": 13,
+      "milkId": 3,
+      "raw": false,
+      "wildcard": false,
+      "id": 52
+    },
+    {
+      "name": "Robusto",
+      "originId": 9,
+      "age": 10,
+      "styleId": 13,
+      "milkId": 1,
+      "raw": false,
+      "wildcard": false,
+      "id": 52
     }
   ]
 }
