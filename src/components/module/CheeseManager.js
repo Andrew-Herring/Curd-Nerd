@@ -14,6 +14,12 @@ export default  Object.create(null, {
         .then(result => result.json())
     }
   },
+  getUserId: {
+    value: (credentials) => {
+      return fetch(`${cheeseBank}/users?username=${credentials}`)
+        .then(result => result.json())
+    }
+  },
   getAllByUser: {
     value: (resource, credentials) => {
       return fetch(`${cheeseBank}/${resource}?userId=${credentials}`)

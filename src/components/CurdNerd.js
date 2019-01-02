@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 
 export default class CurdNerd extends Component {
+  
   render() {
     return <React.Fragment>
         <NavBar {...this.props} />

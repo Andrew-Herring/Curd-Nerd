@@ -11,22 +11,46 @@
       "id": 2
     },
     {
-      "username": "sam",
-      "password": "1",
+      "username": "Andy",
+      "password": "finn",
       "id": 3
     },
     {
-      "username": "Amanda",
-      "password": "mackinzie",
+      "username": "newguy",
+      "password": "1",
       "id": 4
     },
     {
-      "username": "Cheeseman",
-      "password": "pewds",
+      "username": "cheeseguy",
+      "password": "1",
       "id": 5
+    },
+    {
+      "username": "newnewguy",
+      "password": "1",
+      "id": 6
     }
   ],
-  "plates": [],
+  "plates": [
+    {
+      "people": null,
+      "softCheese": null,
+      "agedCheese": null,
+      "midCheese": null,
+      "wildcard": null,
+      "userId": "4",
+      "id": 18
+    },
+    {
+      "people": null,
+      "softCheese": null,
+      "agedCheese": null,
+      "midCheese": null,
+      "wildcard": null,
+      "userId": "1",
+      "id": 19
+    }
+  ],
   "milks": [
     {
       "name": "Cow",
