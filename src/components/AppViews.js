@@ -6,8 +6,8 @@ import Dashboard from './dashboard/dash'
 import EditPlate from './create/editPage'
 import Library from './library/library'
 import Share from './share/share'
-import Login from './Authentication/Login'
-import IsAuth from './Authentication/IsAuth'
+// import Login from './Authentication/Login'
+// import IsAuth from './Authentication/IsAuth'
 
 export default class AppViews extends Component {
   isAuthenticated = () => sessionStorage.getItem("credentials") !== null
@@ -91,38 +91,32 @@ export default class AppViews extends Component {
       plates: plates
     }))
   }
-  editPlate = (id, plates) =>
+  editPlate = (id, plates) => {
   cheeseBank.edit("plates", id, plates)
     .then(() => cheeseBank.getAllByUser("plates", sessionStorage.getItem(`credentials`)))
     .then(plates => this.setState({
       plates: plates
-    }))
+    }
+    // () => this.props.history.push('/dash')
+    )
+    )
+    
+  }
   
-    renderPlates
-
+  // sharePlate = (plates, item) => {
+  //   return cheeseBank.share(plates, item)
+  //   .then(() => cheeseBank.getAll("plates"))
+  //   .then(plates => this.setState({
+  //     plates: plates
+  //   })
+  //   )
+  // }
+  
 
   render() {
     return (
       <React.Fragment>
 
-        {/* <Route exact path="/login" component={Login} /> */}
-{/* 
-        <Route exact path="/" render={(props) => {
-         if (this.isAuthenticated()) { 
-          return <Dashboard {...props}
-            plates={this.state.plates}
-            addPlate={this.addPlate}
-            editPlate={this.editPlate}
-            deletePlate={this.deletePlate}
-            activeUser={this.props.activeUser}
-          />
-        } 
-        else {
-          return <Redirect to="/login" />
-      }
-
-        }} />
- */}
 
         <Route exact path="/dash" render={(props) => {
           if (this.isAuthenticated()) {

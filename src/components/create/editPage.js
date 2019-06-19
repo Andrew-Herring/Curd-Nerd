@@ -57,6 +57,8 @@ export default class EditPlate extends Component {
 
 
   editPlate = evt => {
+    const credentials = sessionStorage.getItem('credentials')
+
     evt.preventDefault()
 
     let people = this.state.people;
@@ -82,12 +84,13 @@ export default class EditPlate extends Component {
       softCheese: soft,
       agedCheese: aged,
       midCheese: mid,
-      wildcard: wildcard
+      wildcard: wildcard,
+      shared: false,
+      userId: credentials
     }
+    console.log("edited plate", editedPlate)
+    console.log("this state id", this.state.id)
     this.props.editPlate(this.state.id, editedPlate)
-      .then(() => {
-        this.props.history.push("/dash")
-      })
   }
 
 
