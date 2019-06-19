@@ -34,21 +34,13 @@
   "plates": [
     {
       "people": null,
-      "softCheese": null,
+      "softCheese": 11,
       "agedCheese": null,
       "midCheese": null,
       "wildcard": null,
-      "userId": "4",
-      "id": 18
-    },
-    {
-      "people": null,
-      "softCheese": null,
-      "agedCheese": null,
-      "midCheese": null,
-      "wildcard": null,
+      "shared": false,
       "userId": "1",
-      "id": 19
+      "id": 1
     }
   ],
   "milks": [

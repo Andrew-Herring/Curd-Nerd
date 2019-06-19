@@ -85,6 +85,13 @@ export default  Object.create(null, {
         .then(result => result.json())
     }
   },
+  share: {
+    value: (resource) => {
+      return fetch(`${cheeseBank}/${resource}?share=true`, {
+        method: "POST"
+      }).then(result => result.json())
+    }
+  },
   getSearch: {
     value: function(resource, query) {
       return fetch(`${cheeseBank}/${resource}?q=${query}`).then(e => e.json())

@@ -84,9 +84,9 @@ export default class CreatePage extends Component {
       agedCheese: aged,
       midCheese: mid,
       wildcard: wildcard,
+      shared: false,
       userId: credentials
     }
-    console.log(plates)
     this.props.addPlate("plates", plates).then(() => this.props.history.push("/dash"))
   }
 
@@ -103,7 +103,7 @@ export default class CreatePage extends Component {
       { key: 7, text: '7', value: 7 },
       { key: 8, text: '8', value: 8 },
       { key: 9, text: '9', value: 9 },
-      { key: 10, text: 'everyone at the NSS Demo', value: "everyone at the NSS Demo" },
+      { key: 10, text: 'Everyone at the NSS Demo', value: "Everyone at the NSS Demo" },
     ]
 
     return (
@@ -177,7 +177,7 @@ export default class CreatePage extends Component {
 
               <br></br>
 
-              <Button color="yellow" size="large" animated='vertical' className="createBtn"
+              <Button color="blue" size="large" animated='vertical' className="createBtn"
                 onClick={this.constructNewPlate}>
                 <Button.Content hidden>All Done!</Button.Content>
                 <Button.Content visible><Icon name='check' /></Button.Content>

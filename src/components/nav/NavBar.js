@@ -18,6 +18,7 @@ export default class NavBar extends Component {
 
 
   render() {
+
     return (
       <nav className="navbar navbar-light light-blue flex-md-nowrap shadow">
         <ul className="nav nav-pills">
@@ -37,11 +38,10 @@ export default class NavBar extends Component {
           <li className="nav-item">
             <Link className="nav-link" to="/share"><Icon color="orange" name="share square" size="large" />Share</Link>
           </li>
-
-          
           
 
         </ul>
+
         <p id="navTagline"></p>
         <div className="logbtn">
         <Button animated color="orange" 
